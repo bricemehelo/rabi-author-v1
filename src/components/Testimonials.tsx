@@ -8,7 +8,7 @@ export function Testimonials() {
     <section aria-label="What organisers say" className="mx-auto max-w-[1400px] px-4 py-24 md:px-8 md:py-36">
       <Reveal>
         <figure>
-          <blockquote className="max-w-[22ch] text-[clamp(2rem,4.8vw,4rem)] font-medium leading-[1.1] tracking-tight">
+          <blockquote className="max-w-[22ch] text-[clamp(2rem,4.8vw,4rem)] leading-[1.1] tracking-[-0.03em]">
             <span className="text-accent-ink">&ldquo;</span>
             {featured.quote}&rdquo;
           </blockquote>
@@ -20,7 +20,7 @@ export function Testimonials() {
         {rest.map((t, i) => (
           <Reveal key={i} delay={i * 0.1}>
             <figure className="border-t border-line pt-8">
-              <blockquote className="text-xl leading-snug">&ldquo;{t.quote}&rdquo;</blockquote>
+              <blockquote className="text-xl italic leading-snug">&ldquo;{t.quote}&rdquo;</blockquote>
               <Attribution name={t.name} role={t.role} />
             </figure>
           </Reveal>

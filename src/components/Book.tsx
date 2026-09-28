@@ -16,7 +16,7 @@ export function Book() {
             <h2 className="display mt-6 text-[clamp(3.25rem,8vw,7rem)]">
               The Human <span className="text-accent">Advantage</span>
             </h2>
-            <p className="mt-6 max-w-[36ch] text-xl font-medium leading-snug">{book.subtitle}</p>
+            <p className="mt-6 max-w-[36ch] text-xl italic leading-snug">{book.subtitle}</p>
             <p className="mt-5 max-w-[48ch] text-lg leading-relaxed text-block-muted">{book.body}</p>
             <div className="mt-10">
               <a href={buyHref} className="btn btn-primary" {...(book.buyHref ? { target: "_blank", rel: "noreferrer" } : {})}>

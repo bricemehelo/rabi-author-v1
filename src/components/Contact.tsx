@@ -70,7 +70,7 @@ function Newsletter() {
 
   return (
     <form onSubmit={submit} noValidate={false}>
-      <h3 className="text-xl font-semibold tracking-tight">{headline}</h3>
+      <h3 className="text-2xl tracking-tight">{headline}</h3>
       <p className="mt-2 text-muted">{body}</p>
       <div className="mt-6 flex flex-col gap-2">
         <label htmlFor="newsletter-email" className="text-sm font-medium">

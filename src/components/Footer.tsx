@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="mx-auto flex max-w-[1400px] flex-col gap-8 px-4 py-12 text-sm text-muted md:flex-row md:items-end md:justify-between md:px-8">
       <div>
-        <a href="#top" className="display text-3xl text-ink">
+        <a href="#top" className="display text-3xl font-bold text-ink">
           {site.name}
         </a>
         <p className="mt-2">{site.tagline}</p>

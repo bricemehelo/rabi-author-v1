@@ -31,9 +31,9 @@ export function Speaking() {
                     onFocus={() => setActive(i)}
                     onClick={() => setActive(i)}
                     aria-expanded={isActive}
-                    className="group grid w-full grid-cols-[1fr_auto] items-baseline gap-4 py-7 text-left"
+                    className="group grid w-full grid-cols-[1fr_auto] items-baseline gap-4 py-7 text-left font-serif"
                   >
-                    <span className={`text-2xl font-semibold tracking-tight transition-colors md:text-3xl ${isActive ? "text-ink" : "text-muted group-hover:text-ink"}`}>
+                    <span className={`text-2xl tracking-tight transition-colors md:text-3xl ${isActive ? "text-ink" : "text-muted group-hover:text-ink"}`}>
                       {t.title}
                     </span>
                     <ArrowRight

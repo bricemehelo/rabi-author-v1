@@ -25,7 +25,7 @@ export function Nav() {
   return (
     <header className="theme-dark sticky top-0 z-40 border-b border-line bg-bg">
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-4 md:h-[72px] md:px-8">
-        <a href="#top" className="display text-2xl tracking-wide">
+        <a href="#top" className="display text-2xl font-bold">
           {site.name}
         </a>
 

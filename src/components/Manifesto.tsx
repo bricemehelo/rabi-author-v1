@@ -11,7 +11,7 @@ export function Manifesto() {
 
   return (
     <section className="mx-auto max-w-[1400px] px-4 py-24 md:px-8 md:pt-24 md:pb-36">
-      <p ref={ref} className="max-w-[26ch] text-[clamp(1.9rem,4.4vw,3.75rem)] font-medium leading-[1.12] tracking-tight">
+      <p ref={ref} className="max-w-[26ch] text-[clamp(1.9rem,4.4vw,3.75rem)] leading-[1.15] tracking-[-0.02em]">
         {words.map((word, i) =>
           reduce ? (
             <span key={i}>{word} </span>
