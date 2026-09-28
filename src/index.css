@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/*
+  Palette comes from the book cover: ink navy + cover gold, on a cool off-white.
+  Shape rule: buttons and inputs are full pills; photos and panels are square-cornered.
+*/
+:root {
+  --bg: #f5f6f4;
+  --surface: #e9ebe8;
+  --ink: #0f1729;
+  --muted: #4b5466;
+  --line: rgb(15 23 41 / 0.14);
+  --accent: #e6bb1f;
+  --accent-ink: #806400; /* gold dark enough to read as text on --bg */
+  --on-accent: #0f1729;
+  --block: #0f1729; /* the one colour-blocked section (the book) */
+  --block-ink: #eef0f4;
+  --block-muted: #aab2c3;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0d12;
+    --surface: #151922;
+    --ink: #eef0f4;
+    --muted: #a3acbe;
+    --line: rgb(238 240 244 / 0.14);
+    --accent: #ebc437;
+    --accent-ink: #ebc437;
+    --on-accent: #0a0f1c;
+    --block: #151f36;
+    --block-ink: #eef0f4;
+    --block-muted: #aab2c3;
+    color-scheme: dark;
+  }
+}
+
+/*
+  The opening of the page (nav, hero, manifesto, stage photo) is always near-black,
+  whatever the visitor's system theme. It is one deliberate switch into the light body.
+*/
+@layer base {
+  .theme-dark {
+    --bg: #0b0d12;
+    --surface: #151922;
+    --ink: #f2f3f5;
+    --muted: #a6adba;
+    --line: rgb(242 243 245 / 0.14);
+    --accent-ink: var(--accent);
+    --on-accent: #0b0d12;
+    background-color: var(--bg);
+    color: var(--ink);
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-on-accent: var(--on-accent);
+  --color-block: var(--block);
+  --color-block-ink: var(--block-ink);
+  --color-block-muted: var(--block-muted);
+  --font-sans: "Archivo Variable", ui-sans-serif, system-ui, sans-serif;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-stretch: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Condensed display face, echoing the book cover's typography. */
+  .display {
+    font-stretch: 72%;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 0.95;
+  }
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--accent-ink);
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: 999px;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: transform 0.3s var(--ease-out-expo), background-color 0.3s, color 0.3s;
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  .btn-primary:hover {
+    background: color-mix(in oklab, var(--accent) 88%, white);
+  }
+  .btn-ghost {
+    border: 1px solid var(--line);
+    color: inherit;
+  }
+  .btn-ghost:hover {
+    border-color: currentColor;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
