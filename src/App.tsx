@@ -1,5 +1,6 @@
 import { About } from "./components/About";
 import { Book } from "./components/Book";
+import { BookingDialog } from "./components/Booking";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Gallery } from "./components/Gallery";
@@ -31,6 +32,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <BookingDialog />
     </>
   );
 }

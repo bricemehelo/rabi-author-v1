@@ -2,7 +2,7 @@ import { List, X } from "@phosphor-icons/react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 import { site } from "../content";
-import { bookingHref, bookingTarget } from "./Socials";
+import { BookButton } from "./Booking";
 
 const links = [
   { href: "#speaking", label: "Speaking" },
@@ -23,7 +23,7 @@ export function Nav() {
   }, [open]);
 
   return (
-    <header className="theme-dark sticky top-0 z-40 border-b border-line bg-bg/85 backdrop-blur-md">
+    <header className="theme-dark sticky top-0 z-40 border-b border-line bg-bg">
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-4 md:h-[72px] md:px-8">
         <a href="#top" className="display text-2xl tracking-wide">
           {site.name}
@@ -38,9 +38,7 @@ export function Nav() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a href={bookingHref} {...bookingTarget} className="btn btn-primary hidden !py-2.5 sm:inline-flex">
-            Book Rabi
-          </a>
+          <BookButton className="btn btn-primary hidden !py-2.5 sm:inline-flex">Book Rabi</BookButton>
           <button
             type="button"
             className="grid size-11 place-items-center rounded-full md:hidden"
@@ -70,9 +68,9 @@ export function Nav() {
                 {l.label}
               </a>
             ))}
-            <a href={bookingHref} {...bookingTarget} onClick={() => setOpen(false)} className="btn btn-primary mt-6">
+            <BookButton onClick={() => setOpen(false)} className="btn btn-primary mt-6">
               Book Rabi
-            </a>
+            </BookButton>
           </motion.nav>
         )}
       </AnimatePresence>

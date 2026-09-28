@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { hero } from "../content";
 import { photo } from "../photos";
 import { Picture } from "./Picture";
-import { bookingHref, bookingTarget } from "./Socials";
+import { BookButton } from "./Booking";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -42,10 +42,10 @@ export function Hero() {
         </motion.p>
 
         <motion.div className="mt-10 flex flex-wrap items-center gap-3" {...rise(0.45)}>
-          <a href={bookingHref} {...bookingTarget} className="btn btn-primary group">
+          <BookButton className="btn btn-primary group">
             Book Rabi
             <ArrowRight size={18} weight="bold" className="transition-transform group-hover:translate-x-1" />
-          </a>
+          </BookButton>
           <a href="#book" className="btn btn-ghost">
             Explore the book
           </a>

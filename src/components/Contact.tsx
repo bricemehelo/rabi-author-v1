@@ -2,7 +2,8 @@ import { ArrowUpRight, CheckCircle } from "@phosphor-icons/react";
 import { useState, type FormEvent } from "react";
 import { contact, site } from "../content";
 import { Reveal } from "./Reveal";
-import { bookingHref, bookingTarget, Socials } from "./Socials";
+import { BookButton } from "./Booking";
+import { Socials } from "./Socials";
 
 export function Contact() {
   return (
@@ -13,10 +14,10 @@ export function Contact() {
           <h2 className="display mt-6 max-w-[16ch] text-[clamp(3rem,7vw,6rem)]">{contact.headline}</h2>
           <p className="mt-6 max-w-[42ch] text-lg leading-relaxed text-muted">{contact.body}</p>
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
-            <a href={bookingHref} {...bookingTarget} className="btn btn-primary">
+            <BookButton className="btn btn-primary">
               Book Rabi
               <ArrowUpRight size={18} weight="bold" />
-            </a>
+            </BookButton>
             <a href={`mailto:${site.email}`} className="text-muted underline decoration-line underline-offset-4 hover:text-ink">
               {site.email}
             </a>

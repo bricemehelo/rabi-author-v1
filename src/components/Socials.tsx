@@ -1,12 +1,5 @@
 import { FacebookLogo, InstagramLogo, LinkedinLogo, XLogo, YoutubeLogo } from "@phosphor-icons/react";
-import { booking, site, type SocialIcon } from "../content";
-
-/** Where every "Book Rabi" button goes: Calendly when configured, otherwise a pre-filled email. */
-export const bookingHref =
-  booking.calendlyUrl ||
-  `mailto:${site.email}?subject=${encodeURIComponent(booking.subject)}&body=${encodeURIComponent(booking.body)}`;
-
-export const bookingTarget = booking.calendlyUrl ? { target: "_blank", rel: "noreferrer" } : {};
+import { site, type SocialIcon } from "../content";
 
 const icons = { linkedin: LinkedinLogo, instagram: InstagramLogo, x: XLogo, youtube: YoutubeLogo, facebook: FacebookLogo };
 
