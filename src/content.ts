@@ -2,7 +2,12 @@
 // Lines marked TODO need a real value from Rabi before launch.
 // Photo ids are "<folder>/<file name without extension>" from the /photos folder.
 
-export type SocialIcon = "linkedin" | "instagram" | "x" | "youtube" | "facebook";
+export type SocialIcon =
+  | "linkedin"
+  | "instagram"
+  | "x"
+  | "youtube"
+  | "facebook";
 
 export const site = {
   name: "Rabi Atiti",
@@ -10,7 +15,11 @@ export const site = {
   tagline: "Human wisdom for an intelligent world.",
   // An empty href shows the icon greyed out and not clickable until the link is added.
   socials: [
-    { label: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/in/rabiatiti/" },
+    {
+      label: "LinkedIn",
+      icon: "linkedin",
+      href: "https://www.linkedin.com/in/rabiatiti/",
+    },
     { label: "Instagram", icon: "instagram", href: "" }, // TODO
     { label: "X", icon: "x", href: "" }, // TODO
     { label: "YouTube", icon: "youtube", href: "" }, // TODO
@@ -29,7 +38,7 @@ export const hero = {
   eyebrow: "Speaker, strategist, author",
   headline: ["Build what", "machines"],
   emphasis: "can't.",
-  sub: "Rabi Atiti helps leaders turn artificial intelligence into human advantage, with sharper judgement and braver cultures.",
+  sub: "Rabi helps leaders and organisations think differently about AI, connecting global intelligence with local insight to unlock new possibilities, solve complex challenges and create meaningful impact.Keeping people at the centre and in control. <br>Global intelligence. Local insight. The Human Advantage.",
   photo: "portraits/with-the-human-advantage",
 };
 
@@ -64,7 +73,12 @@ export const speaking = {
       position: "50% 40%",
     },
   ],
-  formats: ["Keynotes", "Leadership workshops", "Panels and fireside chats", "Executive offsites"],
+  formats: [
+    "Keynotes",
+    "Leadership workshops",
+    "Panels and fireside chats",
+    "Executive offsites",
+  ],
 };
 
 export const book = {
@@ -84,12 +98,14 @@ export const testimonials = [
     role: "Conference Director, Organisation",
   },
   {
-    quote: "Clear thinking, real warmth and ideas our leadership team used the very next day.",
+    quote:
+      "Clear thinking, real warmth and ideas our leadership team used the very next day.",
     name: "Name Surname",
     role: "Chief People Officer, Organisation",
   },
   {
-    quote: "The rare speaker who changes the energy in the room and the decisions after it.",
+    quote:
+      "The rare speaker who changes the energy in the room and the decisions after it.",
     name: "Name Surname",
     role: "Managing Director, Organisation",
   },
@@ -99,7 +115,13 @@ export const gallery = {
   headline: "Moments on and off the stage.",
   initialCount: 12, // photos shown before "Show all"
   // Friendly names and order for the photo folders. Unlisted folders appear after these.
-  labels: { speaking: "Speaking", panels: "Panels", events: "Events", book: "Book", portraits: "Portraits" } as Record<string, string>,
+  labels: {
+    speaking: "Speaking",
+    panels: "Panels",
+    events: "Events",
+    book: "Book",
+    portraits: "Portraits",
+  } as Record<string, string>,
 };
 
 export const about = {
