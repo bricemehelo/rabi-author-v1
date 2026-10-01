@@ -36,8 +36,8 @@ export const booking = {
 
 export const hero = {
   eyebrow: "Speaker, strategist, author",
-  headline: ["Build what", "machines"],
-  emphasis: "can't.",
+  headline: ["WINNING WITH Ai", "AI + Human Partnership "],
+  emphasis: "is the future.",
   sub: "Rabi helps leaders and organisations think differently about AI, connecting global intelligence with local insight to unlock new possibilities, solve complex challenges and create meaningful impact.Keeping people at the centre and in control. <br>Global intelligence. Local insight. The Human Advantage.",
   photo: "portraits/with-the-human-advantage",
 };
