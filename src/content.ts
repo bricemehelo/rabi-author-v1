@@ -93,43 +93,56 @@ export const book = {
   endorsementsLabel: "Praise for The Human Advantage",
   endorsements: [
     {
-      quote: "A clear, humane guide to leading people well while the technology around them changes.",
+      quote:
+        "A clear, humane guide to leading people well while the technology around them changes.",
       name: "Endorser Name",
       title: "Title, Organisation",
     },
     {
-      quote: "Practical and generous. Every leader working with AI should read it with their team.",
+      quote:
+        "Practical and generous. Every leader working with AI should read it with their team.",
       name: "Endorser Name",
       title: "Title, Organisation",
     },
     {
-      quote: "Rabi makes the case that our humanity is the competitive edge, and shows how to use it.",
+      quote:
+        "Rabi makes the case that our humanity is the competitive edge, and shows how to use it.",
       name: "Endorser Name",
       title: "Title, Organisation",
     },
   ],
 };
 
-// TODO: replace with real, named testimonials (name + role + organisation) before launch.
-export const testimonials = [
-  {
-    quote: "Rabi makes the future feel less abstract and much more human.",
-    name: "Name Surname",
-    role: "Conference Director, Organisation",
-  },
-  {
-    quote:
-      "Clear thinking, real warmth and ideas our leadership team used the very next day.",
-    name: "Name Surname",
-    role: "Chief People Officer, Organisation",
-  },
-  {
-    quote:
-      "The rare speaker who changes the energy in the room and the decisions after it.",
-    name: "Name Surname",
-    role: "Managing Director, Organisation",
-  },
-];
+// Partners section, straight after the book.
+// logo: optional path to a file in /public/partners (SVG or PNG on a transparent background works best).
+//       Without a logo, the name is shown in the headline font instead.
+// href: optional link to their website. note: optional one line under a charity.
+type Partner = { name: string; logo?: string; href?: string; note?: string };
+
+export const partners = {
+  causeLabel: "Book proceeds support",
+  // Wording from the book launch banner. TODO: confirm with Rabi.
+  causeHeadline:
+    "Every copy of The Human Advantage supports STEM education in the UK, Nigeria and Rwanda.",
+  // TODO: the charities that receive book proceeds.
+  charities: [
+    {
+      name: "Quivers Academy",
+      note: "Godly Quivers Stewardship Foundation - A.K.A Quivers Academy: is a Christian non-profit aiming at equipping Teenagers and Children in Nigeria with STEM skills with the options to also strengthen their character through Christians Ethical Values and Principles.",
+    },
+    { name: "Charity name", note: "One line on what they do" },
+    { name: "Charity name", note: "One line on what they do" },
+  ] as Partner[],
+  partnersLabel: "Professional partners",
+  // TODO: the professional bodies Rabi partners with.
+  partners: [
+    { name: "Partner name" },
+    { name: "Partner name" },
+    { name: "Partner name" },
+    { name: "Partner name" },
+    { name: "Partner name" },
+  ] as Partner[],
+};
 
 export const gallery = {
   headline: "Moments on and off the stage.",
