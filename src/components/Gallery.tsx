@@ -8,7 +8,7 @@ import { Reveal } from "./Reveal";
 
 const ALL = "all";
 // Photos already featured large elsewhere on the page are left out of the gallery.
-const featured = new Set([hero.photo, about.photo, stages.photo]);
+const featured = new Set([...hero.photos.map((p) => p.id), about.photo, stages.photo]);
 const pool = photos.filter((p) => !featured.has(p.id));
 const label = (c: string) => gallery.labels[c] ?? c.charAt(0).toUpperCase() + c.slice(1).replace(/-/g, " ");
 

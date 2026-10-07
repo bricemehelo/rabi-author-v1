@@ -39,7 +39,14 @@ export const hero = {
   headline: ["WINNING WITH AI", "AI + Human Partnership "],
   emphasis: "is the future.",
   sub: "",
-  photo: "portraits/with-the-human-advantage",
+  // The hero photos turn like pages of a book, in this order. The first loads first, so keep the
+  // strongest one there. position = which part of the photo stays in frame ("50% 20%" = centre, near the top).
+  photos: [
+    { id: "portraits/with-the-human-advantage", position: "50% 15%" },
+    { id: "book/business-book-awards-finalist", position: "45% 30%" },
+    { id: "speaking/book-launch-talk", position: "45% 25%" },
+    { id: "book/business-book-awards-with-the-book", position: "50% 30%" },
+  ],
 };
 
 export const manifesto =

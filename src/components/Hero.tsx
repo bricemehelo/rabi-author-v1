@@ -1,9 +1,8 @@
 import { ArrowRight } from "@phosphor-icons/react";
 import { motion, useReducedMotion } from "motion/react";
 import { hero } from "../content";
-import { photo } from "../photos";
-import { Picture } from "./Picture";
 import { BookButton } from "./Booking";
+import { HeroSlides } from "./HeroSlides";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -84,12 +83,7 @@ export function Hero() {
           animate={{ scale: 1 }}
           transition={{ duration: 1.6, delay: 0.15, ease }}
         >
-          <Picture
-            photo={photo(hero.photo)}
-            sizes="(min-width: 1024px) 40vw, 100vw"
-            priority
-            position="50% 15%"
-          />
+          <HeroSlides />
         </motion.div>
       </motion.div>
     </section>
