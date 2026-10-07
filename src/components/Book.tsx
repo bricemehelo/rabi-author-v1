@@ -37,22 +37,65 @@ export function Book() {
   );
 }
 
+const DRIFT_SPEED = 28; // pixels per second: slow enough to read along, not to chase
+const GAP = 40; // matches gap-10 on the track
+
 /**
- * Endorsements along the bottom of the book section, as a quiet horizontal row.
- * Native scroll-snap does the scrolling (swipe, trackpad, keyboard); the arrows just nudge it.
- * No autoplay. Hidden when the list is empty.
+ * Endorsements along the bottom of the book section.
+ * With 3+ quotes the row drifts slowly in an endless loop (the list is rendered twice and the
+ * scroll position wraps by one list-width). Hovering, focusing or touching pauses it, and the
+ * hovered quote stays bright while the rest dim. The arrows and swiping still work.
+ * Reduced motion: no drift, no loop, just a scrollable row with arrows. Hidden when empty.
  */
 function Endorsements() {
   const list = book.endorsements;
   const reduce = useReducedMotion();
+  const loop = !reduce && list.length >= 3;
+  const items = loop ? [...list, ...list] : list;
   const track = useRef<HTMLUListElement>(null);
+  const paused = useRef(false); // pointer over the row, keyboard focus inside, or a finger on it
+  const holdUntil = useRef(0); // short pause after an arrow click or swipe, so it doesn't fight the user
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
 
-  // Watch the first and last quote to know when an arrow has nothing left to scroll to.
+  // The drift. Writes scrollLeft directly each frame (no React state), so it stays cheap.
   useEffect(() => {
     const el = track.current;
-    if (!el || el.children.length === 0) return;
+    if (!loop || !el) return;
+    let raf = 0;
+    let last = 0;
+    let pos = el.scrollLeft;
+    let visible = false;
+    const io = new IntersectionObserver(([entry]) => (visible = entry.isIntersecting));
+    io.observe(el);
+
+    const loopWidth = () => (el.children[list.length] as HTMLElement).offsetLeft - (el.children[0] as HTMLElement).offsetLeft;
+
+    const tick = (t: number) => {
+      const dt = last ? Math.min(t - last, 64) / 1000 : 0;
+      last = t;
+      if (!visible || paused.current || t < holdUntil.current || document.hidden) {
+        pos = el.scrollLeft; // follow whatever the visitor did while we were paused
+      } else {
+        const width = loopWidth();
+        if (Math.abs(el.scrollLeft - pos) > 2) pos = el.scrollLeft; // moved by something else
+        pos += DRIFT_SPEED * dt;
+        if (pos >= width) pos -= width; // the second copy lines up with the first: invisible jump
+        el.scrollLeft = pos;
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => {
+      cancelAnimationFrame(raf);
+      io.disconnect();
+    };
+  }, [loop, list.length]);
+
+  // Without the loop, watch the first and last quote to know when an arrow has nothing left to scroll to.
+  useEffect(() => {
+    const el = track.current;
+    if (loop || !el || el.children.length === 0) return;
     const first = el.children[0];
     const last = el.children[el.children.length - 1];
     const io = new IntersectionObserver(
@@ -67,7 +110,7 @@ function Endorsements() {
     io.observe(first);
     io.observe(last);
     return () => io.disconnect();
-  }, [list.length]);
+  }, [loop, list.length]);
 
   if (list.length === 0) return null;
 
@@ -75,20 +118,30 @@ function Endorsements() {
     const el = track.current;
     const item = el?.children[0] as HTMLElement | undefined;
     if (!el || !item) return;
-    el.scrollBy({ left: dir * (item.offsetWidth + 40), behavior: reduce ? "auto" : "smooth" });
+    const step = item.offsetWidth + GAP;
+    if (loop) {
+      holdUntil.current = performance.now() + 1200;
+      // Going back from the very start: jump to the identical spot in the second copy first.
+      if (dir === -1 && el.scrollLeft < step) {
+        el.scrollLeft += (el.children[list.length] as HTMLElement).offsetLeft - item.offsetLeft;
+      }
+    }
+    el.scrollBy({ left: dir * step, behavior: reduce ? "auto" : "smooth" });
   };
-  const scrollable = !(atStart && atEnd);
-  // Soft fade on whichever edge has more quotes beyond it.
-  const fade = `linear-gradient(to right, ${atStart ? "black" : "transparent"}, black 12%, black 82%, ${atEnd ? "black" : "transparent"})`;
+  const showArrows = loop || !(atStart && atEnd);
+  // Soft fade on whichever edge has more quotes beyond it (both, when looping).
+  const fadeLeft = loop || !atStart;
+  const fadeRight = loop || !atEnd;
+  const fade = `linear-gradient(to right, ${fadeLeft ? "transparent" : "black"}, black 12%, black 82%, ${fadeRight ? "transparent" : "black"})`;
 
   return (
     <div className="mx-auto max-w-[1400px] px-4 pb-24 md:px-8 md:pb-32">
       <div className="flex items-center justify-between gap-4">
         <p className="text-sm text-block-muted">{book.endorsementsLabel}</p>
-        {scrollable && (
+        {showArrows && (
           <div className="hidden gap-2 md:flex">
-            <Arrow dir={-1} disabled={atStart} onClick={() => scroll(-1)} />
-            <Arrow dir={1} disabled={atEnd} onClick={() => scroll(1)} />
+            <Arrow dir={-1} disabled={!loop && atStart} onClick={() => scroll(-1)} />
+            <Arrow dir={1} disabled={!loop && atEnd} onClick={() => scroll(1)} />
           </div>
         )}
       </div>
@@ -97,12 +150,27 @@ function Endorsements() {
         ref={track}
         tabIndex={0}
         aria-label={book.endorsementsLabel}
-        className="mt-8 flex snap-x snap-mandatory gap-10 overflow-x-auto overscroll-x-contain pb-2 [scrollbar-width:none] focus-visible:outline-offset-8 [&::-webkit-scrollbar]:hidden"
+        onMouseEnter={() => (paused.current = true)}
+        onMouseLeave={() => (paused.current = false)}
+        onFocus={() => (paused.current = true)}
+        onBlur={() => (paused.current = false)}
+        onTouchStart={() => (paused.current = true)}
+        onTouchEnd={() => {
+          paused.current = false;
+          holdUntil.current = performance.now() + 2500;
+        }}
+        className={`group/track mt-8 flex gap-10 overflow-x-auto overscroll-x-contain pb-2 [scrollbar-width:none] focus-visible:outline-offset-8 [&::-webkit-scrollbar]:hidden ${
+          loop ? "" : "snap-x snap-mandatory"
+        }`}
         style={{ maskImage: fade, WebkitMaskImage: fade }}
       >
-        {list.map((e, i) => (
-          <li key={i} className="w-[85%] shrink-0 snap-start md:w-[46%] lg:w-[38%]">
-            <figure className="border-t border-block-ink/15 pt-8">
+        {items.map((e, i) => (
+          <li
+            key={i}
+            aria-hidden={i >= list.length || undefined}
+            className="group/item w-[85%] shrink-0 snap-start transition-opacity duration-500 group-hover/track:not-hover:opacity-35 md:w-[46%] lg:w-[38%]"
+          >
+            <figure className="border-t border-block-ink/15 pt-8 transition-colors duration-500 group-hover/item:border-accent">
               <blockquote className="max-w-[34ch] text-xl italic leading-snug md:text-2xl">
                 <span className="text-accent">&ldquo;</span>
                 {e.quote}&rdquo;
