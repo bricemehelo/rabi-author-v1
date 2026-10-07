@@ -19,7 +19,7 @@ export const palettes = {
     },
     {
       id: "inclusion",
-      label: "Inclusion",
+      label: "Accessibility",
       swatches: ["#2457d6", "#b65a45", "#176b68"],
     },
   ] as { id: PaletteId; label: string; swatches: string[] }[],
