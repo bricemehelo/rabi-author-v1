@@ -88,6 +88,26 @@ export const book = {
   body: "A field guide for leaders who want to decide well, build trust and stay deeply human beside intelligent machines.",
   cover: "/book/the-human-advantage.png",
   buyHref: "https://www.amazon.com/dp/B0FLTKW3RQ",
+  // TODO: replace with real endorsements (exact wording, with the endorser's permission).
+  // 1 to 3 short quotes read best. Remove an entry to hide it; an empty list hides the whole row.
+  endorsementsLabel: "Praise for The Human Advantage",
+  endorsements: [
+    {
+      quote: "A clear, humane guide to leading people well while the technology around them changes.",
+      name: "Endorser Name",
+      title: "Title, Organisation",
+    },
+    {
+      quote: "Practical and generous. Every leader working with AI should read it with their team.",
+      name: "Endorser Name",
+      title: "Title, Organisation",
+    },
+    {
+      quote: "Rabi makes the case that our humanity is the competitive edge, and shows how to use it.",
+      name: "Endorser Name",
+      title: "Title, Organisation",
+    },
+  ],
 };
 
 // TODO: replace with real, named testimonials (name + role + organisation) before launch.

@@ -31,7 +31,41 @@ export function Book() {
           <Cover />
         </div>
       </div>
+
+      <Endorsements />
     </section>
+  );
+}
+
+const columns = ["", "md:grid-cols-1", "md:grid-cols-2", "md:grid-cols-3"];
+
+/** Short endorsements along the bottom of the book section. Hidden when the list is empty. */
+function Endorsements() {
+  const list = book.endorsements;
+  if (list.length === 0) return null;
+
+  return (
+    <div className="mx-auto max-w-[1400px] px-4 pb-24 md:px-8 md:pb-32">
+      <p className="text-sm text-block-muted">{book.endorsementsLabel}</p>
+      <ul className={`mt-8 grid gap-12 md:gap-10 ${columns[Math.min(list.length, 3)]}`}>
+        {list.map((e, i) => (
+          <li key={i}>
+            <Reveal delay={i * 0.1}>
+              <figure className="border-t border-block-ink/15 pt-8">
+                <blockquote className="max-w-[34ch] text-xl italic leading-snug md:text-2xl">
+                  <span className="text-accent">&ldquo;</span>
+                  {e.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-6 text-sm">
+                  <span className="font-bold">{e.name}</span>
+                  <span className="block text-block-muted">{e.title}</span>
+                </figcaption>
+              </figure>
+            </Reveal>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
