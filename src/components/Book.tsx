@@ -3,6 +3,7 @@ import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } fro
 import { useEffect, useRef, useState, type PointerEvent } from "react";
 import { book, site } from "../content";
 import { Reveal } from "./Reveal";
+import { Truncate } from "./Truncate";
 
 export function Book() {
   const buyHref = book.buyHref || `mailto:${site.email}?subject=${encodeURIComponent(`Ordering ${book.title}`)}`;
@@ -172,8 +173,11 @@ function Endorsements() {
           >
             <figure className="border-t border-block-ink/15 pt-8 transition-colors duration-500 group-hover/item:border-accent">
               <blockquote className="max-w-[34ch] text-xl italic leading-snug md:text-2xl">
-                <span className="text-accent">&ldquo;</span>
-                {e.quote}&rdquo;
+                {/* Long quotes show 4 lines until the quote (or its card) is hovered. */}
+                <Truncate lines={4} className="group-hover/item:line-clamp-none" focusable={i < list.length}>
+                  <span className="text-accent">&ldquo;</span>
+                  {e.quote}&rdquo;
+                </Truncate>
               </blockquote>
               <figcaption className="mt-6 text-sm">
                 <span className="font-bold">{e.name}</span>

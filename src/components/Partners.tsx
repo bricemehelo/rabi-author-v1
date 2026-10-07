@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "@phosphor-icons/react";
 import { partners } from "../content";
 import { Reveal } from "./Reveal";
+import { Truncate } from "./Truncate";
 
 type Partner = (typeof partners.charities)[number];
 
@@ -72,7 +73,11 @@ function Entry({ partner, size }: { partner: Partner; size: "lg" | "md" }) {
         />
       )}
       <p className={`display ${size === "lg" ? "text-3xl" : "text-2xl"}`}>{name}</p>
-      {note && <p className="mt-2 max-w-[44ch] text-sm leading-relaxed text-muted">{note}</p>}
+      {note && (
+        <p className="mt-2 max-w-[44ch] text-sm leading-relaxed text-muted">
+          <Truncate lines={3}>{note}</Truncate>
+        </p>
+      )}
       {href && (
         <a
           href={href}

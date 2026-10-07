@@ -94,21 +94,37 @@ export const book = {
   endorsements: [
     {
       quote:
-        "A clear, humane guide to leading people well while the technology around them changes.",
-      name: "Endorser Name",
-      title: "Title, Organisation",
+        "A powerful and essential read that proves in an age of machines, our humanity is our greatest advantage. Rabi lights the way forward, championing empathy, creativity,and courage that are not just soft skill, but strategic imperatives for success.",
+      name: "Mark Breslin",
+      title: "Co-founder and Director, Amplif & Impact AI Consultancy",
     },
+
     {
       quote:
-        "Practical and generous. Every leader working with AI should read it with their team.",
-      name: "Endorser Name",
-      title: "Title, Organisation",
+        "Only Rabi could write this- a book grounded in lived experience and global insight, with case studies that break the usual mould. The argument is so well-reasoned and compelling, you're left nodding-and ready to act.",
+      name: "Meera Somji",
+      title: "Ceo and Founder, Clusivity",
     },
+
     {
       quote:
-        "Rabi makes the case that our humanity is the competitive edge, and shows how to use it.",
-      name: "Endorser Name",
-      title: "Title, Organisation",
+        "Courage comes in many forms. Rabi Atiti's life displays a passion for life conjoined with the courage to make key decisions that influenceand bring change. We believe That Human Advantage is a prophetic and anointed 'now word' for leaders across the globe. It is a word of hope, reminding us of the gift of our humanity, and reinforcing the truth that we are much more than machines: we are made in the image of God.",
+      name: "Neil and Hazel Pattison",
+      title: "Lead Couple, Jubilee Church Maidstone",
+    },
+
+    {
+      quote:
+        "A compelling exploration of what makes us uniquely human in an increasingly technological word. The Human Advantage offers profound insight and a refreshing perspective on our enduring capabilities.",
+      name: "Deji Soyemi",
+      title: "IT Consultant",
+    },
+
+    {
+      quote:
+        "I have known Rabi very closely for over two decades, from being a university student combining education with trading to support herself through school, to the wonderful mother and amiable business leader that she has become. No one is better suited than Rabi to write about what the enormous power of the human advantage brings to all situations of change in our lives and workplaces. This is a story well told and a book well written. A must-read and re-read.",
+      name: "Dr Austin Okogun",
+      title: "CEO, Lily Hospitals, Nigeria",
     },
   ],
 };
@@ -135,17 +151,10 @@ export const partners = {
       href: "https://quiversacademy.org",
     },
     { name: "Charity name", note: "One line on what they do" },
-    { name: "Charity name", note: "One line on what they do" },
   ] as Partner[],
   partnersLabel: "Professional partners",
   // TODO: the professional bodies Rabi partners with.
-  partners: [
-    { name: "Partner name" },
-    { name: "Partner name" },
-    { name: "Partner name" },
-    { name: "Partner name" },
-    { name: "Partner name" },
-  ] as Partner[],
+  partners: [{ name: "Partner name" }, { name: "Partner name" }] as Partner[],
 };
 
 export const gallery = {
