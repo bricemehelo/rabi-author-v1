@@ -128,7 +128,6 @@ export const about = {
   headline: "I care about what technology asks of people.",
   paragraphs: [
     "I'm a speaker, strategist and author working where human behaviour meets artificial intelligence. My work helps people see change clearly, trust their own judgement and move forward together.",
-    "I believe Africa should help shape the world's next chapter, not simply adjust to it.",
   ],
   photo: "portraits/smiling-in-blue",
 };
