@@ -14,7 +14,16 @@ export function PaletteSwitch() {
   };
 
   return (
-    <div role="group" aria-label="Colour palette" className="flex items-center gap-1 rounded-full border border-line p-1">
+    <div className="flex flex-col gap-2 md:items-end">
+      {palettes.note && <p className="max-w-[34ch] text-xs leading-relaxed text-muted md:text-right">{palettes.note}</p>}
+      <Switch current={current} choose={choose} />
+    </div>
+  );
+}
+
+function Switch({ current, choose }: { current: PaletteId; choose: (id: PaletteId) => void }) {
+  return (
+    <div role="group" aria-label="Colour palette" className="flex w-fit items-center gap-1 rounded-full border border-line p-1">
       {palettes.options.map((o) => {
         const active = o.id === current;
         return (

@@ -31,7 +31,7 @@
   --block: #0f1729;
   --block-ink: #eef0f4;
   --block-muted: #aab2c3;
-  --nav-color: #0b0d12; /* browser toolbar colour on phones */
+  --nav-color: #1c1c1e; /* browser toolbar colour on phones */
   color-scheme: light;
 }
 
@@ -55,11 +55,12 @@
 
 @layer base {
   /* The opening of the page (nav, hero, manifesto, stage photo). */
+  /* Classic's opening is the graphite of the book cover, so with the gold it reads like the cover. */
   .theme-dark {
-    --bg: #0b0d12;
-    --surface: #151922;
+    --bg: #1c1c1e;
+    --surface: #26262a;
     --ink: #f2f3f5;
-    --muted: #a6adba;
+    --muted: #a9acb3;
     --line: rgb(242 243 245 / 0.14);
     --accent-ink: var(--accent);
     --on-accent: #0b0d12;

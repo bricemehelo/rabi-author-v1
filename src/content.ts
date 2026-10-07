@@ -11,6 +11,9 @@ export type PaletteId = "classic" | "inclusion";
 export const palettes = {
   defaultPalette: "classic" as PaletteId,
   showSwitcher: true,
+  // Shown above the switch. Checked: every text/background pair in both palettes meets WCAG 2.2 AA
+  // contrast (4.5:1 for text, 3:1 for large text and button shapes). Re-check if you change colours.
+  note: "Designed for accessibility. Both palettes meet WCAG AA colour contrast.",
   options: [
     {
       id: "classic",
@@ -202,10 +205,11 @@ export const book = {
 type Partner = { name: string; logo?: string; href?: string; note?: string };
 
 export const partners = {
-  causeLabel: "Book proceeds support",
+  causeLabel:
+    "Book proceeds support : Every copy of the book sold contributes to STEM education in Europe & Africa",
   // Wording from the book launch banner. TODO: confirm with Rabi.
   causeHeadline:
-    "Every copy of The Human Advantage supports STEM education in the UK, Nigeria and Rwanda.",
+    "The Human Advantage supports STEM education in Europe & Africa",
   // TODO: the charities that receive book proceeds.
   charities: [
     {
@@ -234,8 +238,7 @@ export const gallery = {
 };
 
 export const about = {
-  headline:
-    "The future belongs to those who can connect what technology can do with what humans are capable of.",
+  headline: "Human wisdom for an intelligent world....",
   paragraphs: [
     "I'm a speaker, strategist and author working where human behaviour meets artificial intelligence. My work helps people see change clearly, trust their own judgement and move forward together.",
     "I work where AI meets human behaviour.",
