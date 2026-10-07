@@ -36,14 +36,14 @@ export const booking = {
 
 export const hero = {
   eyebrow: "Speaker, strategist, author",
-  headline: ["WINNING WITH Ai", "AI + Human Partnership "],
+  headline: ["WINNING WITH AI", "AI + Human Partnership "],
   emphasis: "is the future.",
-  sub: "Rabi helps leaders and organisations think differently about AI, connecting global intelligence with local insight to unlock new possibilities, solve complex challenges and create meaningful impact.Keeping people at the centre and in control. <br>Global intelligence. Local insight. The Human Advantage.",
+  sub: "",
   photo: "portraits/with-the-human-advantage",
 };
 
 export const manifesto =
-  "Big technology shifts rarely fail for lack of information. They fail when people lack trust, confidence and a reason to move. Rabi gives rooms all three.";
+  "Rabi helps leaders and organisations think differently about AI, connecting global intelligence with local insight to unlock new possibilities, solve complex challenges and create meaningful impact.Keeping people at the centre and in control. Global intelligence. Local insight. The Human Advantage.";
 
 export const stages = {
   photo: "panels/deepfest-main-stage",
