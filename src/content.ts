@@ -81,6 +81,40 @@ export const speaking = {
   ],
 };
 
+// LinkedIn posts shown at the bottom of the Speaking section. Empty list = hidden.
+// url:   the post link (on LinkedIn: "..." on the post > "Copy link to post").
+// text:  recommended. The first line or two of the post. With it, the post shows as a card in the
+//        site's own style; without it, LinkedIn's own embedded post is shown instead.
+// image: optional, only used with `text`. A photo id like "speaking/fireside-conversation",
+//        or a file path like "/linkedin/post-1.jpg" (put the file in public/linkedin/).
+// date:  optional, shown as written, e.g. "March 2026".
+export const linkedin = {
+  label: "From LinkedIn",
+  followLabel: "Follow on LinkedIn",
+  posts: [
+    {
+      url: "https://www.linkedin.com/posts/rabiatiti_oneleapaway-leap26-share-7474019399310585856-4KM8/?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAohE48BPqn2KsS3pPhJUwjsOfhhiAQSo3A",
+      text: "",
+      image: "",
+      date: "03-08-2026",
+    },
+    {
+      url: "https://www.linkedin.com/posts/rabiatiti_thehumanadvantage-thehumanadvantage-impactinaction-share-7448332934698217472-TYs6/?highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7448332936225067008&highlightedUpdateType=SOCIAL_SHARE&origin=SOCIAL_SHARE&utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAohE48BPqn2KsS3pPhJUwjsOfhhiAQSo3A&utm_campaign=whatsapp",
+      text: "",
+      image:
+        "https://media.licdn.com/dms/image/v2/D4E22AQG-qQV3a4eEaQ/feedshare-image-high-res/B4EZ13LVcvHQAY-/0/1775820953910?e=2147483647&v=beta&t=aqXv1HEk11Dd_d9auCwO5rUfgG6XvFaEWDm83LYO-M0",
+      date: "",
+    },
+    {
+      url: "https://www.linkedin.com/posts/rabiatiti_lead-leap-leapfrog-activity-7501671392615194625-rt2d?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAohE48BPqn2KsS3pPhJUwjsOfhhiAQSo3A&utm_campaign=whatsapp",
+      text: "",
+      image:
+        "https://media.licdn.com/dms/image/v2/D4E22AQG-qQV3a4eEaQ/feedshare-image-high-res/B4EZ13LVcvHQAY-/0/1775820953910?e=2147483647&v=beta&t=aqXv1HEk11Dd_d9auCwO5rUfgG6XvFaEWDm83LYO-M0",
+      date: "",
+    },
+  ] as { url: string; text?: string; image?: string; date?: string }[],
+};
+
 export const book = {
   eyebrow: "The book",
   title: "The Human Advantage",

@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useState } from "react";
 import { speaking } from "../content";
 import { photo } from "../photos";
+import { LinkedInPosts } from "./LinkedInPosts";
 import { Picture } from "./Picture";
 import { Reveal } from "./Reveal";
 
@@ -88,6 +89,8 @@ export function Speaking() {
           </div>
         </div>
       </div>
+
+      <LinkedInPosts />
     </section>
   );
 }
