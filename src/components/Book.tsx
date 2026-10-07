@@ -9,13 +9,13 @@ export function Book() {
   const buyHref = book.buyHref || `mailto:${site.email}?subject=${encodeURIComponent(`Ordering ${book.title}`)}`;
 
   return (
-    <section id="book" className="bg-block text-block-ink">
+    <section id="book" className="theme-block bg-block text-block-ink">
       <div className={`mx-auto grid max-w-[1400px] items-center gap-16 px-4 pt-24 md:px-8 md:pt-32 lg:grid-cols-12 ${book.endorsements.length ? "pb-16 md:pb-20" : "pb-24 md:pb-32"}`}>
         <div className="order-2 lg:order-1 lg:col-span-6 lg:col-start-1">
           <Reveal>
-            <p className="eyebrow !text-accent">{book.eyebrow}</p>
+            <p className="eyebrow !text-accent-2">{book.eyebrow}</p>
             <h2 className="display mt-6 text-[clamp(3.25rem,8vw,7rem)]">
-              The Human <span className="text-accent">Advantage</span>
+              The Human <span className="text-accent-2">Advantage</span>
             </h2>
             <p className="mt-6 max-w-[36ch] text-xl italic leading-snug">{book.subtitle}</p>
             <p className="mt-5 max-w-[48ch] text-lg leading-relaxed text-block-muted">{book.body}</p>
@@ -171,11 +171,11 @@ function Endorsements() {
             aria-hidden={i >= list.length || undefined}
             className="group/item w-[85%] shrink-0 snap-start transition-opacity duration-500 group-hover/track:not-hover:opacity-35 md:w-[46%] lg:w-[38%]"
           >
-            <figure className="border-t border-block-ink/15 pt-8 transition-colors duration-500 group-hover/item:border-accent">
+            <figure className="border-t border-block-ink/15 pt-8 transition-colors duration-500 group-hover/item:border-accent-2">
               <blockquote className="max-w-[34ch] text-xl italic leading-snug md:text-2xl">
                 {/* Long quotes show 4 lines until the quote (or its card) is hovered. */}
                 <Truncate lines={4} className="group-hover/item:line-clamp-none" focusable={i < list.length}>
-                  <span className="text-accent">&ldquo;</span>
+                  <span className="text-accent-2">&ldquo;</span>
                   {e.quote}&rdquo;
                 </Truncate>
               </blockquote>

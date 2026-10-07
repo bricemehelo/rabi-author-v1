@@ -34,10 +34,10 @@ export function Hero() {
           {hero.headline[0]}
           <br />
           {hero.headline[1]}{" "}
-          <span className="relative isolate inline-block px-[0.12em] pb-[0.04em] italic text-on-accent">
+          <span className="relative isolate inline-block px-[0.12em] pb-[0.04em] italic text-on-accent-2">
             <motion.span
               aria-hidden
-              className="absolute inset-x-0 top-[0.04em] bottom-[0.02em] -z-10 origin-left bg-accent"
+              className="absolute inset-x-0 top-[0.04em] bottom-[0.02em] -z-10 origin-left bg-accent-2"
               initial={reduce ? false : { scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.9, delay: 0.55, ease }}

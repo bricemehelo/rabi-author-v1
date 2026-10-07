@@ -1,4 +1,5 @@
 import { site } from "../content";
+import { PaletteSwitch } from "./PaletteSwitch";
 import { Socials } from "./Socials";
 
 export function Footer() {
@@ -18,6 +19,7 @@ export function Footer() {
       </nav>
       <div className="flex flex-col gap-3 md:items-end">
         <Socials className="-ml-2.5 md:-mr-2.5 md:ml-0" />
+        <PaletteSwitch />
         <p>&copy; {new Date().getFullYear()} {site.name}</p>
       </div>
     </footer>

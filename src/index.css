@@ -1,11 +1,22 @@
 @import "tailwindcss";
 
 /*
-  Palette comes from the book cover: ink navy + cover gold, on a cool off-white.
-  The site has one fixed look on every device (no automatic dark mode): a near-black
-  opening, a light body, and the navy book section.
+  Two colour palettes, chosen with data-palette on <html> (default set in src/content.ts):
+
+  Classic    the book cover: ink navy + cover gold, on a cool off-white.
+  Inclusion  warm ivory + deep charcoal, with three accents that each have one job:
+             electric blue = actions (AI / technology), terracotta = human emphasis,
+             deep teal = labels.
+
+  Tokens: --accent (buttons, links, focus) / --on-accent (text on it)
+          --accent-2 (human emphasis: hero highlight, quote marks) / --on-accent-2
+          --accent-ink (accent-coloured text such as eyebrows, readable on --bg)
+  Each palette has three zones: the light body, .theme-dark (nav and opening of the page)
+  and .theme-block (the book section). One fixed look on every device, no automatic dark mode.
   Shape rule: buttons and inputs are full pills; photos and panels are square-cornered.
 */
+
+/* ---------- Classic ---------- */
 :root {
   --bg: #f5f6f4;
   --surface: #e9ebe8;
@@ -13,16 +24,37 @@
   --muted: #4b5466;
   --line: rgb(15 23 41 / 0.14);
   --accent: #e6bb1f;
-  --accent-ink: #806400; /* gold dark enough to read as text on --bg */
   --on-accent: #0f1729;
-  --block: #0f1729; /* the one colour-blocked section (the book) */
+  --accent-2: #e6bb1f;
+  --on-accent-2: #0f1729;
+  --accent-ink: #806400; /* gold dark enough to read as text on --bg */
+  --block: #0f1729;
   --block-ink: #eef0f4;
   --block-muted: #aab2c3;
+  --nav-color: #0b0d12; /* browser toolbar colour on phones */
   color-scheme: light;
 }
 
-/* The opening of the page (nav, hero, manifesto, stage photo) is near-black. */
+/* ---------- Inclusion ---------- */
+:root[data-palette="inclusion"] {
+  --bg: #f7f5f0; /* warm ivory */
+  --surface: #e9eef5; /* pale blue-grey */
+  --ink: #171717; /* deep charcoal */
+  --muted: #57554f;
+  --line: rgb(23 23 23 / 0.14);
+  --accent: #2457d6; /* deep electric blue */
+  --on-accent: #ffffff;
+  --accent-2: #b65a45; /* warm terracotta */
+  --on-accent-2: #ffffff;
+  --accent-ink: #176b68; /* deep teal */
+  --block: #176b68;
+  --block-ink: #ffffff;
+  --block-muted: rgb(255 255 255 / 0.8);
+  --nav-color: #171717;
+}
+
 @layer base {
+  /* The opening of the page (nav, hero, manifesto, stage photo). */
   .theme-dark {
     --bg: #0b0d12;
     --surface: #151922;
@@ -31,9 +63,34 @@
     --line: rgb(242 243 245 / 0.14);
     --accent-ink: var(--accent);
     --on-accent: #0b0d12;
+    --on-accent-2: #0b0d12;
     background-color: var(--bg);
     color: var(--ink);
     color-scheme: dark;
+  }
+  :root[data-palette="inclusion"] .theme-dark {
+    --bg: #171717;
+    --surface: #232323;
+    --ink: #f7f5f0;
+    --muted: #b5b2aa;
+    --line: rgb(247 245 240 / 0.14);
+    --accent-ink: #9db8f2; /* light tint of the electric blue: teal is too dark to read on charcoal */
+    --on-accent: #ffffff;
+    --on-accent-2: #ffffff;
+  }
+
+  /* The book section. Classic keeps its gold; Inclusion turns the button ivory and the warm accent
+     into a light terracotta tint, both readable on the teal block. */
+  :root[data-palette="inclusion"] .theme-block {
+    --accent: #f7f5f0;
+    --on-accent: #176b68;
+    --accent-2: #f3c9bd;
+  }
+
+  /* Colours ease across when the palette is switched (class added for half a second). */
+  html.palette-switching,
+  html.palette-switching * {
+    transition: background-color 0.45s ease, color 0.45s ease, border-color 0.45s ease, fill 0.45s ease !important;
   }
 }
 
@@ -46,6 +103,8 @@
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
   --color-on-accent: var(--on-accent);
+  --color-accent-2: var(--accent-2);
+  --color-on-accent-2: var(--on-accent-2);
   --color-block: var(--block);
   --color-block-ink: var(--block-ink);
   --color-block-muted: var(--block-muted);

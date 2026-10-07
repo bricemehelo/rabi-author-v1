@@ -2,6 +2,29 @@
 // Lines marked TODO need a real value from Rabi before launch.
 // Photo ids are "<folder>/<file name without extension>" from the /photos folder.
 
+// Colour palettes (the colours themselves live in src/index.css).
+// defaultPalette: what every visitor sees first. Change to "inclusion" to make that the default.
+// showSwitcher:   true shows the Classic / Inclusion switch in the footer; a visitor's choice is
+//                 remembered on their device. false = everyone always gets defaultPalette.
+export type PaletteId = "classic" | "inclusion";
+
+export const palettes = {
+  defaultPalette: "classic" as PaletteId,
+  showSwitcher: true,
+  options: [
+    {
+      id: "classic",
+      label: "Classic",
+      swatches: ["#0f1729", "#e6bb1f", "#f5f6f4"],
+    },
+    {
+      id: "inclusion",
+      label: "Inclusion",
+      swatches: ["#2457d6", "#b65a45", "#176b68"],
+    },
+  ] as { id: PaletteId; label: string; swatches: string[] }[],
+};
+
 export type SocialIcon =
   | "linkedin"
   | "instagram"
@@ -191,11 +214,10 @@ export const partners = {
       logo: "https://quiversacademy.org/wp-content/uploads/2024/11/quivers-logo.png", // put the file in public/partners/
       href: "https://quiversacademy.org",
     },
-    { name: "Charity name", note: "One line on what they do" },
   ] as Partner[],
   partnersLabel: "Professional partners",
   // TODO: the professional bodies Rabi partners with.
-  partners: [{ name: "Partner name" }, { name: "Partner name" }] as Partner[],
+  partners: [] as Partner[],
 };
 
 export const gallery = {
@@ -212,9 +234,9 @@ export const gallery = {
 };
 
 export const about = {
-  headline: "I care about what technology asks of people.",
-  paragraphs: [
+  headline:
     "The future belongs to those who can connect what technology can do with what humans are capable of.",
+  paragraphs: [
     "I'm a speaker, strategist and author working where human behaviour meets artificial intelligence. My work helps people see change clearly, trust their own judgement and move forward together.",
     "I work where AI meets human behaviour.",
     "I help leaders and organisations think differently about the future, bringing together AI, human capital, leadership, culture and workplace transformation to turn complexity into clarity, change into opportunity, and technology into human advantage.",
