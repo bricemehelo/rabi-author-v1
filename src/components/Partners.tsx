@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "@phosphor-icons/react";
 import { partners } from "../content";
 import { Reveal } from "./Reveal";
 
@@ -20,12 +21,11 @@ export function Partners() {
             <h2 className="display mt-5 max-w-[20ch] text-[clamp(2.25rem,4.6vw,4rem)]">{partners.causeHeadline}</h2>
           </Reveal>
 
-          <ul className="flex flex-col justify-end gap-8 lg:col-span-4 lg:col-start-9">
+          <ul className="flex flex-col gap-10 lg:col-span-4 lg:col-start-9">
             {charities.map((c, i) => (
               <li key={i}>
                 <Reveal delay={i * 0.08}>
-                  <Mark partner={c} size="lg" />
-                  {c.note && <p className="mt-2 max-w-[40ch] text-sm leading-relaxed text-muted">{c.note}</p>}
+                  <Entry partner={c} size="lg" />
                 </Reveal>
               </li>
             ))}
@@ -36,10 +36,10 @@ export function Partners() {
       {bodies.length > 0 && (
         <Reveal className={charities.length > 0 ? "mt-20 border-t border-line pt-10 md:mt-28" : ""}>
           <p className="text-sm text-muted">{partners.partnersLabel}</p>
-          <ul className="mt-8 flex flex-wrap items-center gap-x-14 gap-y-8">
+          <ul className="mt-8 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
             {bodies.map((p, i) => (
               <li key={i}>
-                <Mark partner={p} size="md" />
+                <Entry partner={p} size="md" />
               </li>
             ))}
           </ul>
@@ -49,28 +49,42 @@ export function Partners() {
   );
 }
 
-/** A partner's logo (greyed until hovered) or, without one, their name in the headline font. */
-function Mark({ partner, size }: { partner: Partner; size: "lg" | "md" }) {
-  const content = partner.logo ? (
-    <img
-      src={partner.logo}
-      alt={partner.name}
-      loading="lazy"
-      className={`w-auto max-w-[180px] object-contain opacity-70 grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0 ${
-        size === "lg" ? "h-12" : "h-9"
-      }`}
-    />
-  ) : (
-    <span className={`display block text-muted transition-colors duration-300 group-hover:text-ink ${size === "lg" ? "text-3xl" : "text-2xl"}`}>
-      {partner.name}
-    </span>
-  );
+/** "quiversacademy.org" from "https://www.quiversacademy.org/about". */
+function domain(href: string) {
+  try {
+    return new URL(href).hostname.replace(/^www\./, "");
+  } catch {
+    return href;
+  }
+}
 
-  return partner.href ? (
-    <a href={partner.href} target="_blank" rel="noreferrer" className="group inline-block">
-      {content}
-    </a>
-  ) : (
-    <span className="group inline-block">{content}</span>
+/** Logo (when there is one), name, optional note, and the website as a small link. */
+function Entry({ partner, size }: { partner: Partner; size: "lg" | "md" }) {
+  const { name, logo, href, note } = partner;
+  return (
+    <div>
+      {logo && (
+        <img
+          src={logo}
+          alt=""
+          loading="lazy"
+          className={`mb-4 w-auto max-w-[180px] object-contain object-left ${size === "lg" ? "h-14" : "h-10"}`}
+        />
+      )}
+      <p className={`display ${size === "lg" ? "text-3xl" : "text-2xl"}`}>{name}</p>
+      {note && <p className="mt-2 max-w-[44ch] text-sm leading-relaxed text-muted">{note}</p>}
+      {href && (
+        <a
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${name} website (opens in a new tab)`}
+          className="group mt-2 inline-flex items-center gap-1 text-sm text-muted underline decoration-line underline-offset-4 transition-colors hover:text-ink hover:decoration-current"
+        >
+          {domain(href)}
+          <ArrowUpRight size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+        </a>
+      )}
+    </div>
   );
 }

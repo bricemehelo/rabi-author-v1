@@ -114,9 +114,11 @@ export const book = {
 };
 
 // Partners section, straight after the book.
-// logo: optional path to a file in /public/partners (SVG or PNG on a transparent background works best).
-//       Without a logo, the name is shown in the headline font instead.
-// href: optional link to their website. note: optional one line under a charity.
+// Each entry shows: logo (if any), name, note (if any), then the website as a small link.
+// logo: optional path to a file in /public/partners, e.g. "/partners/quivers.png"
+//       (SVG or PNG on a transparent background works best).
+// href: optional full website address, e.g. "https://quiversacademy.org". The site shows it as "quiversacademy.org".
+// note: optional short description, shown under the name. One or two sentences reads best.
 type Partner = { name: string; logo?: string; href?: string; note?: string };
 
 export const partners = {
@@ -127,8 +129,10 @@ export const partners = {
   // TODO: the charities that receive book proceeds.
   charities: [
     {
-      name: "Quivers Academy",
-      note: "Godly Quivers Stewardship Foundation - A.K.A Quivers Academy: is a Christian non-profit aiming at equipping Teenagers and Children in Nigeria with STEM skills with the options to also strengthen their character through Christians Ethical Values and Principles.",
+      name: "Godly Quivers Stewardship Foundation - A.K.A Quivers Academy",
+      note: "is a Christian non-profit aiming at equipping Teenagers and Children in Nigeria with STEM skills with the options to also strengthen their character through Christians Ethical Values and Principles.",
+      logo: "https://quiversacademy.org/wp-content/uploads/2024/11/quivers-logo.png", // put the file in public/partners/
+      href: "https://quiversacademy.org",
     },
     { name: "Charity name", note: "One line on what they do" },
     { name: "Charity name", note: "One line on what they do" },
