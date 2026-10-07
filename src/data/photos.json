@@ -12,6 +12,78 @@
     "large": "/photos/book/book-on-display-1800.webp"
   },
   {
+    "id": "book/business-book-awards-finalist-full-length",
+    "category": "book",
+    "alt": "Rabi Atiti, Finalist, The Business Book Awards 2026",
+    "caption": "Finalist, The Business Book Awards 2026",
+    "width": 2400,
+    "height": 1802,
+    "color": "rgb(56 56 72)",
+    "src": "/photos/book/business-book-awards-finalist-full-length-800.webp",
+    "srcset": "/photos/book/business-book-awards-finalist-full-length-800.webp 800w, /photos/book/business-book-awards-finalist-full-length-1800.webp 1800w",
+    "large": "/photos/book/business-book-awards-finalist-full-length-1800.webp"
+  },
+  {
+    "id": "book/business-book-awards-finalist-with-guests",
+    "category": "book",
+    "alt": "Rabi Atiti, Finalist, The Business Book Awards 2026",
+    "caption": "Finalist, The Business Book Awards 2026",
+    "width": 2400,
+    "height": 1802,
+    "color": "rgb(56 56 72)",
+    "src": "/photos/book/business-book-awards-finalist-with-guests-800.webp",
+    "srcset": "/photos/book/business-book-awards-finalist-with-guests-800.webp 800w, /photos/book/business-book-awards-finalist-with-guests-1800.webp 1800w",
+    "large": "/photos/book/business-book-awards-finalist-with-guests-1800.webp"
+  },
+  {
+    "id": "book/business-book-awards-finalist",
+    "category": "book",
+    "alt": "Rabi Atiti, Finalist, The Business Book Awards 2026",
+    "caption": "Finalist, The Business Book Awards 2026",
+    "width": 2400,
+    "height": 1802,
+    "color": "rgb(56 56 72)",
+    "src": "/photos/book/business-book-awards-finalist-800.webp",
+    "srcset": "/photos/book/business-book-awards-finalist-800.webp 800w, /photos/book/business-book-awards-finalist-1800.webp 1800w",
+    "large": "/photos/book/business-book-awards-finalist-1800.webp"
+  },
+  {
+    "id": "book/business-book-awards-with-guest",
+    "category": "book",
+    "alt": "Rabi Atiti, The Business Book Awards 2026",
+    "caption": "The Business Book Awards 2026",
+    "width": 2400,
+    "height": 1802,
+    "color": "rgb(56 56 72)",
+    "src": "/photos/book/business-book-awards-with-guest-800.webp",
+    "srcset": "/photos/book/business-book-awards-with-guest-800.webp 800w, /photos/book/business-book-awards-with-guest-1800.webp 1800w",
+    "large": "/photos/book/business-book-awards-with-guest-1800.webp"
+  },
+  {
+    "id": "book/business-book-awards-with-the-book",
+    "category": "book",
+    "alt": "Rabi Atiti, The Business Book Awards 2026",
+    "caption": "The Business Book Awards 2026",
+    "width": 2400,
+    "height": 1802,
+    "color": "rgb(56 56 72)",
+    "src": "/photos/book/business-book-awards-with-the-book-800.webp",
+    "srcset": "/photos/book/business-book-awards-with-the-book-800.webp 800w, /photos/book/business-book-awards-with-the-book-1800.webp 1800w",
+    "large": "/photos/book/business-book-awards-with-the-book-1800.webp"
+  },
+  {
+    "id": "book/change-and-sustainability-finalists",
+    "category": "book",
+    "alt": "Rabi Atiti, Change and Sustainability finalists, The Business Book Awards 2026",
+    "caption": "Change and Sustainability finalists, The Business Book Awards 2026",
+    "width": 2400,
+    "height": 1802,
+    "color": "rgb(8 8 8)",
+    "src": "/photos/book/change-and-sustainability-finalists-800.webp",
+    "srcset": "/photos/book/change-and-sustainability-finalists-800.webp 800w, /photos/book/change-and-sustainability-finalists-1800.webp 1800w",
+    "large": "/photos/book/change-and-sustainability-finalists-1800.webp"
+  },
+  {
     "id": "book/launch-book-table",
     "category": "book",
     "alt": "Rabi Atiti,launch book table",
@@ -46,6 +118,42 @@
     "src": "/photos/book/the-human-advantage-print-800.webp",
     "srcset": "/photos/book/the-human-advantage-print-800.webp 800w, /photos/book/the-human-advantage-print-1800.webp 1800w",
     "large": "/photos/book/the-human-advantage-print-1800.webp"
+  },
+  {
+    "id": "events/business-book-awards-ceremony",
+    "category": "events",
+    "alt": "Rabi Atiti, The Business Book Awards 2026",
+    "caption": "The Business Book Awards 2026",
+    "width": 2400,
+    "height": 1802,
+    "color": "rgb(8 8 8)",
+    "src": "/photos/events/business-book-awards-ceremony-800.webp",
+    "srcset": "/photos/events/business-book-awards-ceremony-800.webp 800w, /photos/events/business-book-awards-ceremony-1800.webp 1800w",
+    "large": "/photos/events/business-book-awards-ceremony-1800.webp"
+  },
+  {
+    "id": "events/business-book-awards-shortlist-announcement",
+    "category": "events",
+    "alt": "Rabi Atiti, Shortlist announcement, The Business Book Awards 2026",
+    "caption": "Shortlist announcement, The Business Book Awards 2026",
+    "width": 1802,
+    "height": 2400,
+    "color": "rgb(8 8 8)",
+    "src": "/photos/events/business-book-awards-shortlist-announcement-800.webp",
+    "srcset": "/photos/events/business-book-awards-shortlist-announcement-800.webp 800w, /photos/events/business-book-awards-shortlist-announcement-1800.webp 1800w",
+    "large": "/photos/events/business-book-awards-shortlist-announcement-1800.webp"
+  },
+  {
+    "id": "events/business-book-awards-with-friends",
+    "category": "events",
+    "alt": "Rabi Atiti, The Business Book Awards 2026",
+    "caption": "The Business Book Awards 2026",
+    "width": 2400,
+    "height": 1600,
+    "color": "rgb(8 8 8)",
+    "src": "/photos/events/business-book-awards-with-friends-800.webp",
+    "srcset": "/photos/events/business-book-awards-with-friends-800.webp 800w, /photos/events/business-book-awards-with-friends-1800.webp 1800w",
+    "large": "/photos/events/business-book-awards-with-friends-1800.webp"
   },
   {
     "id": "events/embrace-after-the-talk",
@@ -96,6 +204,18 @@
     "large": "/photos/events/money2020-1800.webp"
   },
   {
+    "id": "events/networking-conversation",
+    "category": "events",
+    "alt": "Rabi Atiti,networking conversation",
+    "caption": null,
+    "width": 2400,
+    "height": 1800,
+    "color": "rgb(8 24 24)",
+    "src": "/photos/events/networking-conversation-800.webp",
+    "srcset": "/photos/events/networking-conversation-800.webp 800w, /photos/events/networking-conversation-1800.webp 1800w",
+    "large": "/photos/events/networking-conversation-1800.webp"
+  },
+  {
     "id": "events/on-set-filming",
     "category": "events",
     "alt": "Rabi Atiti,on set filming",
@@ -118,6 +238,18 @@
     "src": "/photos/events/roundtable-lunch-800.webp",
     "srcset": "/photos/events/roundtable-lunch-800.webp 800w, /photos/events/roundtable-lunch-1800.webp 1800w",
     "large": "/photos/events/roundtable-lunch-1800.webp"
+  },
+  {
+    "id": "events/seated-conversation",
+    "category": "events",
+    "alt": "Rabi Atiti,seated conversation",
+    "caption": null,
+    "width": 1121,
+    "height": 2400,
+    "color": "rgb(8 8 8)",
+    "src": "/photos/events/seated-conversation-800.webp",
+    "srcset": "/photos/events/seated-conversation-800.webp 800w, /photos/events/seated-conversation-1800.webp 1121w",
+    "large": "/photos/events/seated-conversation-1800.webp"
   },
   {
     "id": "events/warm-welcome",
@@ -288,16 +420,16 @@
     "large": "/photos/panels/sustainability-panel-1800.webp"
   },
   {
-    "id": "portraits/rabi-white-blazer",
+    "id": "portraits/in-conversation-in-pink",
     "category": "portraits",
-    "alt": "Rabi Atiti,white blazer",
+    "alt": "Rabi Atiti,in conversation in pink",
     "caption": null,
-    "width": 1254,
-    "height": 1254,
-    "color": "rgb(120 120 152)",
-    "src": "/photos/portraits/rabi-white-blazer-800.webp",
-    "srcset": "/photos/portraits/rabi-white-blazer-800.webp 800w, /photos/portraits/rabi-white-blazer-1800.webp 1254w",
-    "large": "/photos/portraits/rabi-white-blazer-1800.webp"
+    "width": 1602,
+    "height": 2400,
+    "color": "rgb(8 8 8)",
+    "src": "/photos/portraits/in-conversation-in-pink-800.webp",
+    "srcset": "/photos/portraits/in-conversation-in-pink-800.webp 800w, /photos/portraits/in-conversation-in-pink-1800.webp 1602w",
+    "large": "/photos/portraits/in-conversation-in-pink-1800.webp"
   },
   {
     "id": "portraits/smiling-in-blue",
@@ -310,6 +442,30 @@
     "src": "/photos/portraits/smiling-in-blue-800.webp",
     "srcset": "/photos/portraits/smiling-in-blue-800.webp 800w, /photos/portraits/smiling-in-blue-1800.webp 1800w",
     "large": "/photos/portraits/smiling-in-blue-1800.webp"
+  },
+  {
+    "id": "portraits/speaking-with-microphone",
+    "category": "portraits",
+    "alt": "Rabi Atiti,speaking with microphone",
+    "caption": null,
+    "width": 2400,
+    "height": 1584,
+    "color": "rgb(200 216 232)",
+    "src": "/photos/portraits/speaking-with-microphone-800.webp",
+    "srcset": "/photos/portraits/speaking-with-microphone-800.webp 800w, /photos/portraits/speaking-with-microphone-1800.webp 1800w",
+    "large": "/photos/portraits/speaking-with-microphone-1800.webp"
+  },
+  {
+    "id": "portraits/standing-in-pink",
+    "category": "portraits",
+    "alt": "Rabi Atiti,standing in pink",
+    "caption": null,
+    "width": 946,
+    "height": 2049,
+    "color": "rgb(8 8 8)",
+    "src": "/photos/portraits/standing-in-pink-800.webp",
+    "srcset": "/photos/portraits/standing-in-pink-800.webp 800w, /photos/portraits/standing-in-pink-1800.webp 946w",
+    "large": "/photos/portraits/standing-in-pink-1800.webp"
   },
   {
     "id": "portraits/with-the-human-advantage",
