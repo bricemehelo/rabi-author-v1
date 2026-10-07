@@ -28,7 +28,7 @@ export function Hero() {
         </motion.p>
 
         <motion.h1
-          className="display mt-6 text-[clamp(3.5rem,11vw,6.5rem)]"
+          className="display mt-6 text-[clamp(3.5rem,11vw,4.5rem)]"
           {...rise(0.2)}
         >
           {hero.headline[0]}
