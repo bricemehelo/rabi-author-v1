@@ -207,7 +207,12 @@ export const gallery = {
 export const about = {
   headline: "I care about what technology asks of people.",
   paragraphs: [
+    "The future belongs to those who can connect what technology can do with what humans are capable of.",
     "I'm a speaker, strategist and author working where human behaviour meets artificial intelligence. My work helps people see change clearly, trust their own judgement and move forward together.",
+    "I work where AI meets human behaviour.",
+    "I help leaders and organisations think differently about the future, bringing together AI, human capital, leadership, culture and workplace transformation to turn complexity into clarity, change into opportunity, and technology into human advantage.",
+    "Global intelligence. Local insight. Human at the centre.",
+    "That, to me, is winning with AI.",
   ],
   photo: "portraits/smiling-in-blue",
 };
