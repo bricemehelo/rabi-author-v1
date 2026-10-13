@@ -240,7 +240,7 @@ export const gallery = {
 export const about = {
   headline: "Human wisdom for an intelligent world....",
   paragraphs: [
-    "I'm a speaker, strategist and author working where human behaviour meets artificial intelligence. My work helps people see change clearly, trust their own judgement and move forward together.",
+    "I am a speaker, strategist and author working at the intersection of AI, human behaviour, leadership and commercial growth.",
     "I work where AI meets human behaviour.",
     "I help leaders and organisations think differently about the future, bringing together AI, human capital, leadership, culture and workplace transformation to turn complexity into clarity, change into opportunity, and technology into human advantage.",
     "Global intelligence. Local insight. Human at the centre.",
